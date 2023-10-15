@@ -18,9 +18,22 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: 'index.html',
+      }),
+      new WebpackPwaManifest({
+        name: 'Text Editor',
+        short_name: 'App', 
+        description: 'Notes app that should function with or without an internet connection.',
+        background_color: '#ffffff',
+      }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'Service-worker.js'
+      })
     ],
-
+// boiler plate from activities
     module: {
       rules: [
         {
