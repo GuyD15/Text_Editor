@@ -29,7 +29,7 @@ module.exports = () => {
         background_color: '#ffffff',
       }),
       new InjectManifest({
-        swSrc: './clientfa/src-sw.js',
+        swSrc: './src-sw.js',
         swDest: 'Service-worker.js'
       })
     ],
